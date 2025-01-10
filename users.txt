@@ -1,5 +1,0 @@
-sayed,childrengang8@gmail.com,oreo fiona,Admin
-sayedd,1234,1234,Admin
-123,123,123,User
-Sam,0987,0987,Admin
-sayed,sayed,sayed,User
