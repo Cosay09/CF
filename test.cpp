@@ -9,13 +9,37 @@ using namespace std;
 
 int main()
 {
+    optimize();
     int t;
-    for (cin >> t; t-->0)
+    for (cin >> t; t-->0;)
     {
         int n, k, a;
+        set<int> B;
         map<int, int> A;
-        for (cin >> n >> k; n --> 0)
+
+        for (cin >> n >> k; n --> 0;)
             cin >> a; A[a]++;
+
+        int size = B.size();
+        vector<int> C;
+
+        for (auto i: A)
+            C.push_back(i.second);
         
+        sort(C.begin(), C.end());
+
+        for (auto i: C)
+        {
+            if (i <= k)
+            {
+                size--;
+                k -= i;
+            }
+            else
+                break;
+        }
+
+        if (size <= 1) cout << 1;
+        else cout << size << '\n';
     }
 }
