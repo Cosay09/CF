@@ -84,3 +84,6 @@ int main()
 
     return 0;
 }
+
+
+https://chatgpt.com/share/68a52ed4-8cac-800f-9447-ad48b898cee4
