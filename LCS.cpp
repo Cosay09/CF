@@ -60,8 +60,10 @@ int main()
 {
     string X, Y;
     cout << "Enter first string: ";
+    
     cin >> X;
     cout << "Enter second string: ";
+    
     cin >> Y;
     string result = lcs(X, Y);
     cout << "Longest Common Subsequence: " << result << endl;
