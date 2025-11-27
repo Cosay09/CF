@@ -8,6 +8,40 @@ using namespace std;
 int Adj[100][100]; // adjacency list stored as matrix
 int deg[100];      // degree of each vertex
 
+int main()
+{
+    int V, E;
+    cout << "Enter number of vertices: ";
+    cin >> V;
+
+    cout << "Enter number of edges: ";
+    cin >> E;
+
+    // Reset degrees
+    for (int i = 0; i < V; i++)
+        deg[i] = deg2[i] = 0;
+
+    cout << "Enter each edge as: u v\n";
+    for (int i = 0; i < E; i++)
+    {
+        int u, v;
+        cin >> u >> v;
+
+        Adj[u][deg[u]++] = v;   // for BFS
+        Adj2[u][deg2[u]++] = v; // for DFS
+    }
+
+    int start;
+    cout << "Enter BFS start vertex: ";
+    cin >> start;
+
+    BFS(start, V);
+    DFS(V);
+
+    return 0;
+}
+
+
 void BFS(int s, int V)
 {
     int color[100], d[100], pi[100];
