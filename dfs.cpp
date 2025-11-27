@@ -10,6 +10,40 @@ int deg2[100];
 int color2[100], pi2[100], d2[100], f2[100];
 int Time;
 
+int main()
+{
+    int V, E;
+    cout << "Enter number of vertices: ";
+    cin >> V;
+
+    cout << "Enter number of edges: ";
+    cin >> E;
+
+    // Reset degrees
+    for (int i = 0; i < V; i++)
+        deg[i] = deg2[i] = 0;
+
+    cout << "Enter each edge as: u v\n";
+    for (int i = 0; i < E; i++)
+    {
+        int u, v;
+        cin >> u >> v;
+
+        Adj[u][deg[u]++] = v;   // for BFS
+        Adj2[u][deg2[u]++] = v; // for DFS
+    }
+
+    int start;
+    cout << "Enter BFS start vertex: ";
+    cin >> start;
+
+    BFS(start, V);
+    DFS(V);
+
+    return 0;
+}
+
+
 void DFS_VISIT(int u)
 {
     Time++;
